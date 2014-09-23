@@ -6,19 +6,16 @@ function Sushi(){
 
 
   this.render = function() {
-    function createSushies() {
-      return (
-      $("<div></div>")
-      );
+    var moreSushi = $();
+    for(i = 1; i < 3; i++ ) {
+      moreSushi = moreSushi.add('<div class="sushi1"></div>')
+      .add('<div class="sushi2"></div>')
+      .add('<div class="sushi3"></div>');
     }
 
-    var sushiBuffer = [];
-    sushiBuffer.push(createSushies( $('.shushi')) );
-    sushiBuffer.push(createSushies( $('.shushi2')) );
-    sushiBuffer.push(createSushies( $('.shushi3')) ) ;
 
     var self = this;
-    this.$me = (sushiBuffer)
+    this.$me = $(moreSushi)
     .css({
       'left': this.x,
       'top': this.y,
