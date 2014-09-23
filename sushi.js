@@ -4,9 +4,21 @@ function Sushi(){
   this.diameter = 30 + Math.random() * 50;
   this.speed = 1000 + Math.random() * 3500;
 
+
   this.render = function() {
+    function createSushies() {
+      return (
+      $("<div></div>")
+      );
+    }
+
+    var sushiBuffer = [];
+    sushiBuffer.push(createSushies( $('.shushi')) );
+    sushiBuffer.push(createSushies( $('.shushi2')) );
+    sushiBuffer.push(createSushies( $('.shushi3')) ) ;
+
     var self = this;
-    this.$me = $("<div class='sushi'></div>")
+    this.$me = (sushiBuffer)
     .css({
       'left': this.x,
       'top': this.y,
@@ -14,7 +26,7 @@ function Sushi(){
       self.kill();
     });
 
-    $('#game').append(this.$me)
+    $('#game').append(this.$me);
   };
 
   this.move = function() {
@@ -51,9 +63,9 @@ function Game(sushiCount, duration) {
 
  this.increaseScore = function() {
   $('#score').text(this.score += 100);
- }
+}
 
- this.start = function() {
+this.start = function() {
   for (var i = 0; i < this.sushiCount; i++) {
       // make lots of sushi
       var sushi = new Sushi();

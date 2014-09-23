@@ -6,11 +6,10 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 body {
-  background: tomato;
+  background: url('images/restaurant.png') top left repeat;
 }
 
 #game {
-  background: white;
   margin: 10% auto;
   width: 80%;
   height: 800px;
@@ -18,6 +17,20 @@ body {
 
 .sushi {
   background: url('images/sushi.svg') no-repeat;
+  position: absolute; 
+  height: 100px;
+  width: 100px;
+}
+
+.sushi2 {
+  background: url('images/sushi2.svg') no-repeat;
+  position: absolute; 
+  height: 100px;
+  width: 100px;
+}
+
+.sushi3 {
+  background: url('images/sushi3.svg') no-repeat;
   position: absolute; 
   height: 100px;
   width: 100px;
