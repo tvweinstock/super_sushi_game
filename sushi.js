@@ -6,16 +6,13 @@ function Sushi(){
 
 
   this.render = function() {
-    var moreSushi = $();
-    for(i = 1; i < 3; i++ ) {
-      moreSushi = moreSushi.add('<div class="sushi1"></div>')
-      .add('<div class="sushi2"></div>')
-      .add('<div class="sushi3"></div>');
-    }
+    var moreSushi = $('<div></div>');
+    var whichSushi = parseInt(Math.random()*3)+1;
+    moreSushi.addClass('sushi' + whichSushi);
 
 
     var self = this;
-    this.$me = $(moreSushi)
+    this.$me =(moreSushi)
     .css({
       'left': this.x,
       'top': this.y,
@@ -29,7 +26,7 @@ function Sushi(){
   this.move = function() {
     var self = this;
     this.$me.animate ({
-      top: Math.random() * 750,
+      top: Math.random() * 1050,
       left: Math.random() * 750
     }, {
       duration: this.speed,
@@ -93,3 +90,9 @@ $(document).ready(function() {
 // Speed
 // Handles a click event
 // Explodes on click
+
+
+// Math.random always produces a floating point value between 0 and 1
+// to make it be either 1, 2, or 3, multiply it by 3 then add 1, then floor it
+// try playing around in the console
+// getting random numbers is an important skill
