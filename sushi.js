@@ -81,6 +81,10 @@ this.start = function() {
 $(document).ready(function() {
   window.game = new Game(10, 10)
   window.game.start();
+
+  $('#restart').bind('click', function() {
+    window.location.reload();
+  });
 });
 
 
